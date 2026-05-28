@@ -14,9 +14,11 @@ This checklist mirrors the current workflow in SKILL.md and helps track progress
 - [ ] A first simple mock model is implemented
 - [ ] Code exists to train the model, generate predictions, and log metrics
 - [ ] The mock model is tested end to end
+- [ ] Mock model outputs are verified as plausible and the optimization problem is confirmed well-posed
 - [ ] A basic parameter optimization routine is implemented or selected from a library
 - [ ] Main project choices are written to `PREAMBLE.md`
-- [ ] Conversation and working context are compacted after saving the main project information
+- [ ] `SESSION_CONTEXT.md` is created with key decisions and open questions
+- [ ] Conversation history is compacted after saving the main project information
 - [ ] Iterative model-improvement loop is planned with meta-iterations, sub-agents, and inner iterations
 - [ ] Intermediate plans and evaluations are saved under the relevant `meta_*` folders
 - [ ] Progress summaries are written after each meta-iteration
