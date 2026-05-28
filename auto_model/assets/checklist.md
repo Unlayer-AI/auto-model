@@ -10,18 +10,14 @@ This checklist mirrors the current workflow in SKILL.md and helps track progress
 - [ ] Data cleaning needs are identified and a split strategy is defined
 - [ ] Train/validation/test splits are created in the chosen format and stored in the appropriate location
 - [ ] Objective/loss function and validation/test metrics are defined with the user
-- [ ] Training/evaluation runtime is measured and recorded as a metric
-- [ ] A first simple mock model is implemented
-- [ ] Code exists to train the model, generate predictions, and log metrics
-- [ ] The mock model is tested end to end
-- [ ] Mock model outputs are verified as plausible and the optimization problem is confirmed well-posed
-- [ ] A basic parameter optimization routine is implemented or selected from a library
-- [ ] Main project choices are written to `PREAMBLE.md`
-- [ ] `SESSION_CONTEXT.md` is created with key decisions and open questions
+- [ ] Code exists to train & optimize the model, generate predictions, and log metrics
+- [ ] A first mock (or given by user) model is implemented
+- [ ] The mock model is tested end to end (by sub-agent with sufficient permissions) and outputs are verified
+- [ ] Main project choices are written to `CONTEXT.md`
 - [ ] Conversation history is compacted after saving the main project information
 - [ ] Iterative model-improvement loop is planned with meta-iterations, sub-agents, and inner iterations
 - [ ] Intermediate plans and evaluations are saved under the relevant `meta_*` folders
-- [ ] Progress summaries are written after each meta-iteration
+- [ ] Progress summaries are written after each meta-iteration in `CONTEXT.md`
 - [ ] Results are reviewed with the user after the planned iterations
 - [ ] Training and validation performance plots are prepared for review
 - [ ] Final test-set evaluation is performed once the user is satisfied with validation performance
