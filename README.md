@@ -50,4 +50,4 @@ See `examples/friction/` for a worked example applying the skill to tire frictio
 
 ## License
 
-CC-BY-4.0
+TBD
