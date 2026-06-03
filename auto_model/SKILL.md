@@ -1,11 +1,12 @@
 ---
 name: auto-model
-description: Guides the user in creating an interpretable, mathematical model out of data (e.g. from logistic or survival regression to PDEs for physical systems - not neural networks or other black-box machine learning methods). Use when user asks for help in creating or improving an existing model. Uses an iterative meta/inner agent loop to explore structural model modifications in parallel.
-license: CC-BY-4.0
+description: Guides the user in discovering a better model structure (e.g. from feature transformations in logistic regression to equation terms within PDEs to neural network layer compositions) out of data. Use when the user asks to create or improve an existing model. Uses an iterative meta/inner agent loop to explore structural model modifications in parallel.
+license: Apache-2.0
 ---
 
 # auto-model
-A structured guide to building interpretable, mechanistic models from data with agents. Applies to a wide range of tasks, from simple regression to complex physical systems, from automotive to pharmacology.
+A structured guide to discovering models from data with agents.
+Focuses on the structure of the model (be it equation terms or neural network layers) rather than just parameter values, using an iterative meta/inner agent loop to explore structural modifications in parallel. Applies to a wide range of tasks, from simple regression to complex physical systems, from automotive to pharmacology.
 
 ---
 

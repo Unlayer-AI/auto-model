@@ -1,28 +1,32 @@
+<img src="assets/auto-model.png" alt="a cute robot sculpting a wooden horse under the supervision of a girl" width="600"/>
+
 # auto-model
 
-A skill to guide agents in building interpretable, mechanistic models from data. Covers everything from goal definition to iterative model improvement with parallel sub-agents, through to final test-set evaluation. Designed for a wide range of tasks — from simple regression to complex physical systems (automotive, pharmacology, biomechanics, etc.) — using mathematical/structural models, not black-box neural networks.
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-2ea44f.svg)](LICENSE)
+![Status: Experimental](https://img.shields.io/badge/Status-Experimental-f39c12.svg)
+![Type: Agent Skill](https://img.shields.io/badge/Type-Agent%20Skill-1f6feb.svg)
+![Workflow: Meta/Inner Loop](https://img.shields.io/badge/Workflow-Meta%2FInner%20Loop-8a2be2.svg)
+
+`auto-model` is meant to be a practical skill for building or improving a model from data with agents. It focuses on the structure of the model (be it equation terms or neural network layers) rather than just parameter values, and strives to apply to a wide range of tasks, from simple regression to complex physical systems in a wide range of fields (automotive, pharmacology, ...).
+
+The skill tries to be reasonably comprehensive, guiding the agent from problem setup to iterative model improvement with parallel sub-agents, and ends with holdout test-set evaluation.
 
 Built following the [Complete Guide to Building Skills for Claude](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf).
 
----
+## At a glance
 
-## Structure
+- What it is: an agent skill that helps you discover or improve model structure from data (not just tune parameters).
+- How it works: a 4-phase loop - setup, first model, iterative improvement with parallel agents, then final holdout evaluation.
+- What you get: a documented search history, candidate model files, evaluation notes, and a final test-set report.
+- Best for: contained modeling tasks, where the model definition fits into a file.
 
-```
-auto_model/
-  SKILL.md                  # Skill entry point: phase table, entry signals, how to start
-  assets/
-    checklist.md            # Progress tracker — copy to project root when starting
-    phases/
-        setup.md                # Phase 1: goal, data, metrics, optimization routine
-        first_model.md          # Phase 2: mock model, sub-agent pipeline test, sanity check
-        iterate.md              # Phase 3: meta/inner agent loop (core of the skill)
-        finalize.md             # Phase 4: test-set evaluation, FINAL.md
-```
+## How to use
 
----
+Copy the `auto_model/` folder into your project's directory, in `.claude/skills/` (or `.agents/skills/` for other providers than Anthropic).
 
 ## Phases
+
+The skill is organized into four sequential phases, each with a detailed recipe in `assets/phases/`. The agent will try to skip what has already been done, but the user can also trigger any phase manually by asking the agent to load its recipe.
 
 | Phase | Recipe | Entry signal |
 |---|---|---|
@@ -33,21 +37,47 @@ auto_model/
 
 Each phase ends with a context dump to `CONTEXT.md` and a history compact, enabling clean resumption.
 
-The agent reads only the YAML frontmatter of a phase file to confirm the right phase before loading the full recipe:
-```bash
-awk 'NR>1{if(/^---$/)exit; print}' auto_model/assets/phases/1_setup.md
+The agent reads only the YAML frontmatter of a phase file to confirm the right phase before loading the full recipe.
+
+## Skill structure
+
 ```
-
----
-
-## How to use
-
-Install the skill by pointing your Claude agent config to `auto_model/SKILL.md`, or copy the `auto_model/` folder into your project's `.claude/skills/` directory.
-
-See `examples/friction/` for a worked example applying the skill to tire friction model calibration.
-
----
+auto_model/
+  SKILL.md                  # Skill entry point: phase table, entry signals, how to start
+  assets/
+    CHECKLIST.md            # Template for progress tracking
+    CONTEXT.md              # Template for human-readable updates
+    FINAL.md                # Template for final report and test-set evaluation
+    phases/
+        1_setup.md                # Phase 1: goal, data, metrics, optimization routine
+        2_first_model.md          # Phase 2: mock model, sub-agent pipeline test, sanity check
+        3_iterate.md              # Phase 3: meta/inner agent loop (core of the skill)
+        4_finalize.md             # Phase 4: test-set evaluation, FINAL.md
+  references/           # Currently empty, but could include relevant material for your domain
+  scripts/
+    read_phases.sh        # Bash script to read only the frontmatter of phase files
+    read_phases.ps1       # PowerShell script to read only the frontmatter of phase files
+```
 
 ## License
 
-TBD
+Licensed under Apache License 2.0. See `LICENSE`.
+
+## Notice
+
+For redistributions and derivative works, preserve applicable notices from `NOTICE` as required by Apache License 2.0.
+
+The use of "*discovered with auto-model*" in any derivative works is kindly encouraged.
+
+## Citation
+
+If you use `auto-model` in your work, please consider citing:
+
+```
+@software{auto-model,
+  author = {Unlayer AI},
+  title = {auto-model: An Agent Skill for Discovering Models from Data},
+  year = {2026},
+  url = {https://github.com/unlayer-ai/auto-model}
+}
+```

@@ -11,11 +11,15 @@ description: First phase. Review/establish goal and domain lingo with user, iden
 
 ## Steps
 
+### 0. Feasibility
+- Confirm that subagents can be spawned and read, write, and execute files in the project directory (and subdirectories)
+- Ask about the intended programming language and runtime environment; confirm that the agent can use it and that required libraries are installed
+
 ### 1. Goal
 Review with the user:
 - Context, intended goal, and scope of the model
-- Programming language/software to use; confirm runtime supports it and required libraries are installed
 - Domain lingo to use throughout (e.g. *loss function* vs. *cost function* / *features* vs. *covariates* / *training* vs. *calibration*)
+- Whether the model needs to meet certain properties (e.g. differentiability, positivity, boundedness, some equivariance, adhere to some physical constraints, etc.)
 
 ### 2. Existing code
 If any code already exists, review it with the user: decide whether to reuse or rewrite. Use these signals to decide where to skip within this phase: if train/val/test split files exist → skip to Metrics; if an optimization routine exists → skip to the context dump below.
