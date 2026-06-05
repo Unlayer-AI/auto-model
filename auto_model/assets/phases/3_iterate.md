@@ -29,7 +29,7 @@ For each meta-iteration `m = 1 … M`:
 Launch **S sub-agents in parallel**. Each agent writes exclusively within its own `meta_m/agent_s/` directory to avoid file conflicts.
 
 Provide each sub-agent with:
-- If `m = 1`, the initial model file; if `m > 1`, the best model from `meta_(m-1)/agent_s` + respective evaluation results
+- If `m = 1`, the baseline model file; if `m > 1`, the best model from `meta_(m-1)/agent_s` + respective evaluation results
 - A distinct hypothesis or search direction (ensure agents don't duplicate effort)
 - The evaluation protocol: train on `train.X`, evaluate on both `train.X` and `validation.X`, log all metrics
 

@@ -1,8 +1,8 @@
 ---
 name: setup
-entry: No existing project artifacts, or splits exist but no model yet
-exit: Optimization routine exists; CONTEXT.md created; history compacted
-description: First phase. Review/establish goal and domain lingo with user, identify and prepare data splits, define metrics and loss function, implement parameter optimization routine.
+entry: No `CONTEXT.md` artifact in project root folder
+exit: Optimization routine exists; CONTEXT.md created.
+description: First phase. Confirm goal and terminology, prepare data splits, define loss/metrics, and set up parameter optimization.
 ---
 
 # Phase 1 — Setup
@@ -13,32 +13,32 @@ description: First phase. Review/establish goal and domain lingo with user, iden
 
 ### 0. Feasibility
 - Confirm that subagents can be spawned and read, write, and execute files in the project directory (and subdirectories)
-- Ask about the intended programming language and runtime environment; confirm that the agent can use it and that required libraries are installed
+- Confirm with the user their intended language/runtime and that required libraries are available
 
 ### 1. Goal
-Review with the user:
+Confirm with the user:
 - Context, intended goal, and scope of the model
 - Domain lingo to use throughout (e.g. *loss function* vs. *cost function* / *features* vs. *covariates* / *training* vs. *calibration*)
 - Whether the model needs to meet certain properties (e.g. differentiability, positivity, boundedness, some equivariance, adhere to some physical constraints, etc.)
 
 ### 2. Existing code
-If any code already exists, review it with the user: decide whether to reuse or rewrite. Use these signals to decide where to skip within this phase: if train/val/test split files exist → skip to Metrics; if an optimization routine exists → skip to the context dump below.
+If code already exists, review it with the user and decide whether to reuse or rewrite. Use these skip signals: if train/val/test split files exist, skip to Metrics; if an optimization routine exists, skip to the context dump.
 
 ### 3. Data
-Identify:
+Identify and confirm:
 - Where the data lives and which files/tables are relevant
 - Intended input and output variables
 - Whether data is present, sufficient, and clean; flag any cleaning needs
 - A split strategy that produces `train.X`, `validation.X`, and `test.X` (e.g. `.csv`, `.mat`, `.rdata`) stored in a consistent location
 
 ### 4. Metrics
-Define with the user:
+Define and confirm with the user:
 - Objective/loss function for training/calibration
 - Evaluation metrics for the validation and test sets
 - *Always include run-time and memory usage as metrics* — these gate the feasibility of the iterative loop
 
 ### 5. Optimization routine
-Implement (or confirm existing) a parameter optimization routine, e.g. gradient descent or a black-box method (PSO, Nelder-Mead). Prefer libraries over from-scratch implementations.
+Implement a parameter optimization routine, or confirm an existing one, e.g. gradient descent or a black-box method (PSO, Nelder-Mead). Prefer libraries over from-scratch implementations.
 
 ---
 

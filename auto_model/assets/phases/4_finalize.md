@@ -2,7 +2,7 @@
 name: finalize
 description: Fourth and final phase. Evaluate the best model on the held-out test set, decide whether to return to Iterate or accept results, and produce FINAL.md summarizing the model and key findings.
 entry: User satisfied with validation performance; CONTEXT.md has pointer to best model
-exit: FINAL.md created; CONTEXT.md updated with test metrics
+exit: FINAL.md created; CONTEXT.md updated with test metrics.
 ---
 
 # Phase 4 — Finalize
