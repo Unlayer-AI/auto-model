@@ -9,7 +9,7 @@
 ![Type: Agent Skill](https://img.shields.io/badge/Type-Agent%20Skill-1f6feb.svg)
 ![Workflow: Meta/Inner Loop](https://img.shields.io/badge/Workflow-Meta%2FInner%20Loop-8a2be2.svg)
 
-`auto-model` is a **skill** to guide agents through building or improving a model from data, searching for a better **structure** - by transforming input features, introducing new equation terms, or modifying neural layers.
+`auto-model` is an agent **skill** for building or improving models from data. It searches for better model **structures** by transforming input features, introducing equation terms, or modifying neural network layers.
 
 This skill is designed to be minimal and flexible: it heavily relies on the quality of the agent (claude code, openai codex, opencode etc.). For more complete and comprehensive model or program discovery solutions, consider [OpenEvolve](https://github.com/algorithmicsuperintelligence/openevolve), [ShinkaEvolve](https://github.com/SakanaAI/ShinkaEvolve), [SkyDiscover](https://github.com/skydiscover-ai/skydiscover), etc.
 
