@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="assets/auto-model.png" width="300" alt="auto-model logo" style="vertical-align: middle;">&nbsp;
+  <img src="assets/auto-model.png" width="500" alt="auto-model logo" style="vertical-align: middle;">&nbsp;
 
   <b>auto-model</b>
 </h1>
