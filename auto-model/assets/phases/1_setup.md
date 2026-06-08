@@ -1,7 +1,7 @@
 ---
 name: setup
 entry: No `CONTEXT.md` artifact in project root folder
-exit: Optimization routine exists; CONTEXT.md created.
+exit: Set up completed and documented in CONTEXT.md.
 description: First phase. Confirm goal and terminology, prepare data splits, define loss/metrics, and set up parameter optimization.
 ---
 
