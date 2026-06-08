@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Prints the YAML frontmatter of every phase file in assets/phases/.
-# Run from the auto_model/ directory:
+# Run from the auto-model/ directory:
 #   bash scripts/read_phases.sh
 
 PHASES_DIR="$(dirname "$0")/../assets/phases"

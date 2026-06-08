@@ -17,6 +17,7 @@ description: First phase. Confirm goal and terminology, prepare data splits, def
 
 ### 1. Goal
 Confirm with the user:
+- Check for any useful info in the skill's `references` folder
 - Context, intended goal, and scope of the model
 - Domain lingo to use throughout (e.g. *loss function* vs. *cost function* / *features* vs. *covariates* / *training* vs. *calibration*)
 - Whether the model needs to meet certain properties (e.g. differentiability, positivity, boundedness, some equivariance, adhere to some physical constraints, etc.)
@@ -51,4 +52,4 @@ Create `CONTEXT.md` in the project root using `assets/CONTEXT.md` as a starting 
 - Chosen loss/cost/objective function and evaluation metrics
 - Brief description of the optimization routine
 
-Then **compact your conversation history** before proceeding to Phase 2 — First Model (if auto-compact is not enabled, ask the user to trigger it).
+Then **compact your conversation history** before proceeding to Phase 2 — Baseline Model (if auto-compact is not enabled, ask the user to trigger it).

@@ -23,12 +23,13 @@ Evaluate the best model on `test.X`. Report all metrics defined in Phase 1 (incl
 
 ### 4. FINAL.md
 Create `FINAL.md` in the project root using `assets/FINAL.md` as a starting point. Fill in:
-- Path and structure summary of the final model
-- Train / validation / test metrics
-- Key structural changes that led from the mock model to the final model
-- Any caveats, known limitations, or suggested next steps
+- Decision, goal, and concise result summary
+- Selected model path, structure summary, rationale, and usage entry point
+- Baseline validation, final validation, and final test metrics
+- Acceptance-criteria results and interpretation of the validation-to-test difference
+- Most important limitation, next step, and reproducibility pointers
 
----
+Keep `FINAL.md` concise and decision-focused. Link to `CONTEXT.md` for the full search history instead of repeating individual experiments or meta-iteration details.
 
 ## Context dump (end of phase)
 

@@ -7,7 +7,7 @@ Progress tracker — copy to project root and update as you complete each step.
 - [ ] Train / validation / test splits created
 - [ ] `CONTEXT.md` created; history compacted
 
-## Phase 2 — First Model
+## Phase 2 — Baseline Model
 - [ ] Mock model implemented; end-to-end pipeline verified by a sub-agent
 - [ ] `CONTEXT.md` updated with baseline metrics; history compacted
 

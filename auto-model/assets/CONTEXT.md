@@ -33,7 +33,7 @@ convergence criterion, and where it lives in code.>
 
 ---
 
-<!-- ─── Phase 2 — First Model ─────────────────────────────────────────── -->
+<!-- ─── Phase 2 — Baseline Model ──────────────────────────────────────── -->
 
 ## Mock model / baseline
 - **File:** `<path/to/model.X>`
