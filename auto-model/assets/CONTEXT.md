@@ -1,6 +1,6 @@
 # <Project name> — project context
 
-> **Living document.** Each phase appends new sections; do not overwrite previous ones - rather append addenda/errata.
+> **Living document.** Each phase appends new/updates sections.
 
 ---
 
@@ -89,7 +89,13 @@ convergence criterion, and where it lives in code.>
 
 <!-- ─── Phase 4 — Finalize ─────────────────────────────────────────────── -->
 
-## Final test metrics
-- **All metrics:** <including loss/cost/objective value for the test set, and any other evaluation metrics defined with the user>
-- **Notes:** <any noteworthy discrepancy between val and test, or confirmation of generalization>
-- See `FINAL.md` for the complete report.
+## Final outcome
+- **Decision:** <accept final model / return to iteration / do not use>
+- **Selected model:** `<path/to/final/model.X>` — <concise description and why it was selected>
+- **Usage:** <entry point or command, expected inputs/outputs, and required preprocessing>
+- **Final validation metrics:** <all metrics defined with the user, including runtime and memory>
+- **Final test metrics:** <all metrics defined with the user, including runtime and memory>
+- **Generalization:** <brief interpretation of the validation-to-test difference>
+- **Acceptance criteria:** <which goals and constraints passed or failed>
+- **Key limitation:** <most important limitation or untested assumption>
+- **Next step:** <most useful follow-up, if any>

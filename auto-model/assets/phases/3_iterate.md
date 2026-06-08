@@ -1,7 +1,7 @@
 ---
 name: iterate
 description: Third and main phase. Orchestrate meta/inner agent loop. Guide user in choosing iteration parameters, spawn S parallel sub-agents per meta-iteration each running I sequential structural modifications, review results across agents, and repeat for M meta-iterations until user is satisfied with validation performance.
-entry: CONTEXT.md exists; end-to-end pipeline verified
+entry: CONTEXT.md exists; end-to-end pipeline verified for baseline model.
 exit: User satisfied with validation performance; CONTEXT.md updated with final summary; history compacted
 ---
 
@@ -50,7 +50,7 @@ Once all S agents complete their I iterations:
 - Formulate hypotheses for the next meta-iteration; ensure next-iteration agent prompts cover non-overlapping search directions.
 
 ### 4. Context dump (each meta-iteration)
-**Append** to `CONTEXT.md`:
+Update `CONTEXT.md`:
 
 - Meta-iteration index and best validation metric achieved;
 - Summary of structural changes that worked / didn't work;

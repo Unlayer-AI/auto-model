@@ -52,10 +52,9 @@ The agent confirms the data split, metrics, parameter optimization routine, runt
 | Artifact                                 | Purpose                                                               |
 | ---------------------------------------- | --------------------------------------------------------------------- |
 | `CHECKLIST.md`                           | Progress through the four phases                                      |
-| `CONTEXT.md`                             | Living record of decisions, metrics, experiments, and findings        |
+| `CONTEXT.md`                             | Living record of decisions, experiments, final metrics, and findings  |
 | `model.X`                                | Baseline and candidate model implementations                          |
 | `meta_m/agent_s/attempt_i/evaluation.md` | Evaluation notes for each candidate                                   |
-| `FINAL.md`                               | Final model description, holdout metrics, limitations, and next steps |
 
 Candidate models and their evaluations remain available, so the result includes a documented search history rather than only the winning model.
 
@@ -78,18 +77,16 @@ The held-back test set is used only in the final phase.
 
 ## 🧭 Phases
 
-The skill is organized into four sequential phases. The agent detects completed work from the project artifacts and can resume from the relevant phase.
+The skill is organized into four sequential phases. The agent uses each recipe's frontmatter to detect completed work and resume from the relevant phase.
 
-| Phase                  | Recipe                                                                | Entry signal                                                   |
-| ---------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------- |
-| **1 - Setup**          | [`1_setup.md`](auto-model/assets/phases/1_setup.md)                   | Default starting point                                         |
-| **2 - Baseline Model** | [`2_baseline_model.md`](auto-model/assets/phases/2_baseline_model.md) | Train/validation/test splits exist, or a `model.X` file exists |
-| **3 - Iterate**        | [`3_iterate.md`](auto-model/assets/phases/3_iterate.md)               | `CONTEXT.md` exists and the pipeline is verified               |
-| **4 - Finalize**       | [`4_finalize.md`](auto-model/assets/phases/4_finalize.md)             | User is satisfied with validation performance                  |
+| Phase | What happens | Entry signal |
+|---|---|---|
+| **1 - [Setup](auto-model/assets/phases/1_setup.md)** | Confirm the goal and terminology, prepare data splits, define metrics, and set up parameter optimization. | No `CONTEXT.md` exists in the project root |
+| **2 - [Baseline Model](auto-model/assets/phases/2_baseline_model.md)** | Implement a simple parameterized baseline, test the full pipeline with a sub-agent, and verify that its outputs are plausible. | Set up work done and recorded in `CONTEXT.md` |
+| **3 - [Iterate](auto-model/assets/phases/3_iterate.md)** | Choose the loop parameters, explore structural modifications with parallel inner agents, review the results, and repeat as needed. | `CONTEXT.md` exists and the end-to-end pipeline is verified for the baseline model |
+| **4 - [Finalize](auto-model/assets/phases/4_finalize.md)** | Evaluate the best model on the held-out test set, decide whether to return to iteration or accept it, and record the outcome. | User is satisfied with validation performance and `CONTEXT.md` points to the best model |
 
-Each phase ends with a context dump to `CONTEXT.md` and a history compact, enabling clean resumption.
-
-The agent reads only the YAML frontmatter of a phase file to confirm the right phase before loading the full recipe.
+The agent is asked to read only the YAML frontmatter of a phase file to confirm the right phase before loading the full recipe.
 
 ## 🎯 Where it fits
 
@@ -124,21 +121,18 @@ auto-model/
   assets/
     CHECKLIST.md              # Progress-tracking template
     CONTEXT.md                # Living experiment record template
-    FINAL.md                  # Final report and holdout evaluation template
     phases/
       1_setup.md              # Goal, data, metrics, and optimization routine
       2_baseline_model.md     # Baseline and end-to-end pipeline check
       3_iterate.md            # Meta/inner-agent structural search
-      4_finalize.md           # Holdout test evaluation and FINAL.md
+      4_finalize.md           # Holdout test evaluation and final decision
   references/                 # Optional domain papers, code, and other resources
   scripts/
     read_phases.sh            # Read phase frontmatter with bash/zsh
     read_phases.ps1           # Read phase frontmatter with PowerShell
 ```
 
-Start with [`auto-model/SKILL.md`](auto-model/SKILL.md), or inspect the [`CHECKLIST.md`](auto-model/assets/CHECKLIST.md), [`CONTEXT.md`](auto-model/assets/CONTEXT.md), and [`FINAL.md`](auto-model/assets/FINAL.md) templates.
-
-Built following the [Complete Guide to Building Skills for Claude](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf).
+If you want to dig into the details, start with [`auto-model/SKILL.md`](auto-model/SKILL.md), or inspect the [`CHECKLIST.md`](auto-model/assets/CHECKLIST.md) and [`CONTEXT.md`](auto-model/assets/CONTEXT.md) templates.
 
 ## ⚖️ License
 

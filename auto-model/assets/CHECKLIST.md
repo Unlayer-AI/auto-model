@@ -13,10 +13,10 @@ Progress tracker — copy to project root and update as you complete each step.
 
 ## Phase 3 — Iterate
 - [ ] M, S, I chosen with user
-- [ ] Meta-iteration 1 complete; `CONTEXT.md` appended; history compacted
+- [ ] Meta-iteration 1 complete; `CONTEXT.md` updated; history compacted
 - [ ] *(repeat for each subsequent meta-iteration)*
 - [ ] Progress reviewed with user; `CONTEXT.md` updated with best model pointer; history compacted
 
 ## Phase 4 — Finalize
 - [ ] Best model evaluated on test set
-- [ ] `FINAL.md` created; `CONTEXT.md` updated with test metrics
+- [ ] Final decision, test metrics, and limitations recorded in `CONTEXT.md`

@@ -14,16 +14,16 @@ This skill is organized into four sequential phases, each with a detailed recipe
 
 | Phase | Recipe | Entry signal |
 |---|---|---|
-| **1 — Setup** | `assets/phases/1_setup.md` | Default starting point |
-| **2 — Baseline Model** | `assets/phases/2_baseline_model.md` | Train/val/test splits exist, or a `model.X` file exists |
-| **3 — Iterate** | `assets/phases/3_iterate.md` | `CONTEXT.md` exists in the project root |
-| **4 — Finalize** | `assets/phases/4_finalize.md` | User satisfied with validation performance |
+| **1 — Setup** | `assets/phases/1_setup.md` | No `CONTEXT.md` artifact in project root |
+| **2 — Baseline Model** | `assets/phases/2_baseline_model.md` | `CONTEXT.md` exists; Some prep work done; |
+| **3 — Iterate** | `assets/phases/3_iterate.md` | End-to-end pipeline verified for baseline model |
+| **4 — Finalize** | `assets/phases/4_finalize.md` | User satisfied with validation performance; `CONTEXT.md` points to best model |
 
-Each phase ends with a context dump to `CONTEXT.md` and a history compact — use these as re-entry signals when resuming.
+Each phase updates `CONTEXT.md`. Use the resulting artifacts as re-entry signals when resuming.
 
 ## How to start
 
-1. Copy `assets/checklist.md` to the project root as `CHECKLIST.md` (if not already present) and update it as you go.
+1. Copy `assets/CHECKLIST.md` to the project root (if not already present) and update it as you go.
 2. Detect the current phase using the entry signals above. If a checklist with partial progress is already present, ask the user whether to resume.
 3. Read **only the frontmatter** of all phase files to confirm which one applies — do not load the full recipes yet:
    ```bash
@@ -39,4 +39,4 @@ Each phase ends with a context dump to `CONTEXT.md` and a history compact — us
 
 ## References
 
-The user may place relevant papers, code snippets, or other resources in the `references` folder — check there during Phase 1 and instruct sub-agents to use them as appropriate in Phase 3; refer back as needed.
+The user may place relevant papers, code snippets, or other resources in the `references` folder — check them only when prompted to do so within a particular phase, and refer back / review with the user as needed.

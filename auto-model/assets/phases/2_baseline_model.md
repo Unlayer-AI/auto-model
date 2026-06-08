@@ -1,7 +1,7 @@
 ---
 name: baseline_model
 description: Second phase. Implement a simple baseline model with a parameterized signature, test the full pipeline end-to-end using a sub-agent, and verify outputs are plausible before the iterative loop.
-entry: Optimization routine exists; CONTEXT.md present.
+entry: `CONTEXT.md` present.
 exit: Baseline model defined; end-to-end pipeline verified by sub-agent; CONTEXT.md updated.
 ---
 
